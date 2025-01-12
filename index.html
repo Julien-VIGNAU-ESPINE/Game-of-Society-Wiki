@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki game of Society</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #03dac6;
+        }
+        h3 {
+            color: #03dac6;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            color: #bbbbbb;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #181818;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav button {
+            margin: 0 15px;
+            color: #03dac6;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.2s;
+        }
+
+        nav button:hover {
+            color: #018786;
+            transform: scale(1.1);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        main h2 {
+            font-size: 2rem;
+            color: #03dac6;
+            margin-bottom: 10px;
+        }
+
+        main p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #181818;
+            color: #bbbbbb;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #03dac6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #018786;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Wiki Game of Society</h1>
+        <p>Une ressource claire et intuitive pour vos besoins en connaissances</p>
+    </header>
+    <nav>
+        <button onclick="showSection('introduction')">Introduction</button>
+        <button onclick="showSection('section1')">Citizen</button>
+        <button onclick="showSection('section2')">Protector</button>
+        <button onclick="showSection('section3')">Invader</button>
+        <button onclick="showSection('section4')">Fragile</button>
+        <button onclick="showSection('section5')">Death</button>
+
+    </nav>
+    <main id="content">
+        <h2>Welcome</h2>
+        <p>Welcome on the game of society !</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Gmae of Society.</p>
+    </footer>
+
+    <script>
+        const sections = {
+            introduction: {
+                title: "Introduction",
+                content: `
+
+            The Game of Society is a variant of Conway's Game of Life, designed to simulate complex social dynamics through simple rules and interactions. While inspired by the original concept, this new system introduces color-coded entities with distinct roles, behaviors, and relationships, creating a dynamic and interactive environment.
+                <br/><br/>
+            Core Concept
+            The game revolves around five colors, each representing a specific type of entity or state:
+                <br/><br/>
+            Blue: The Citizen – the backbone of society, a neutral and productive agent.<br/>
+            Red: The Protector – defends society and ensures stability.<br/>
+            Green: The Invader – challenges the status quo and seeks to expand.<br/>
+            Yellow: The Fragile – a vulnerable yet essential part of the ecosystem, requiring protection.<br/>
+            Black: The Death – an entity representing decay and chaos, it seeks to "infect" other colors and disrupt the balance.<br/><br/>
+            <br/><br/>
+            The game simulates the coexistence and interactions between these roles.<br/><br/>
+
+            The Blue, Red, Green, and Yellow entities form the core of society and must navigate their relationships to maintain harmony.<br/>
+            Black serves as a disruptive force, spreading its influence and creating challenges for the other entities.<br/>
+            Each color plays a critical role in maintaining or disturbing the system's balance, creating scenarios that mirror real-world societal complexities, such as cooperation, conflict, growth, and decline.
+            <br/><br/>
+            This unique twist transforms the Game of Life into a social experiment, allowing players to explore how different roles and dynamics shape the survival and evolution of a community.
+            
+            `            },
+
+            section1: {
+                title: "The Blue Entity: The Citizen",
+                content: `
+                
+                In the Game of Society, the Blue entity, also known as the Citizen, embodies the foundational mechanics of Conway's Game of Life. As the most neutral and fundamental member of the system, it serves as the stabilizing force within society.
+<br/><br/>
+                <h3>Rules for the Blue Entity</h3> <br/>
+
+                The Blue entity follows the classic rules of the Game of Life:<br/><br/>
+<p>
+                                    <b>Birth</b>: A new Blue cell is born if exactly three neighboring cells(of any type) are alive.<br/>
+
+                                        <b>Survival</b>: A Blue cell survives if it has two or three living neighbors.<br/>
+
+                <b>Death by Overpopulation</b>: A Blue cell dies if it has more than three living neighbors.<br/>
+
+                <b>Death by Isolation</b>: A Blue cell dies if it has fewer than two living neighbors.<br/><br/>
+
+                These rules ensure that the Blue entity's presence is determined by local population density, mimicking patterns of growth and stability seen in Conway's original design.
+<br/><br/>
+                <h3>Role of the Blue Entity</h3><br/>
+                <p>
+
+                <b>Foundation of Society</b>: Blue entities represent the general population or "citizens" within the system.They are the most numerous and form the baseline for societal dynamics.
+<br/><br/>
+                <b>Neutral Behavior</b>: Unlike the other colors, Blue entities do not actively protect, invade, or display fragility.They exist passively and adapt to their environment based on the rules above.
+<br/><br/>
+                <b>Balance and Growth</b>: Blue entities maintain balance by adhering to the simple principles of life and death.They thrive when conditions are optimal and decline when overpopulation or isolation occurs.
+<br/>
+                `
+            },
+            section2: {
+                title: "The Red Entity: The Protector",
+                content: `                In the Game of Society, the Red entity, also known as the Protector, builds upon the foundational mechanics of Conway's Game of Life. However, the Red entity introduces a critical difference: it is immune to the effects of Black (Death) entities, embodying resilience and protection within society.
+<br/><br/>
+                <h3>Rules for the Red Entity</h3> <br/>
+
+                The Red entity follows a modified version of the classic rules of the Game of Life:<br/><br/>
+<p>
+                                    <b>Birth</b>: A new Red cell is born if exactly three neighboring cells (of any type) are alive.<br/>
+
+                                        <b>Survival</b>: A Red cell survives if it has two or three living neighbors.<br/>
+
+                <b>Death by Overpopulation</b>: A Red cell dies if it has more than three living neighbors.<br/>
+
+                <b>Death by Isolation</b>: A Red cell dies if it has fewer than two living neighbors.<br/><br/>
+
+                Unlike Blue entities, Red cells are not destroyed by the presence of neighboring Black cells, showcasing their resilience in the face of decay and chaos.
+<br/><br/>
+                <h3>Role of the Red Entity</h3><br/>
+                <p>
+
+                <b>Defender of Society</b>: Red entities act as protectors, shielding other colors from the spread of Black cells and maintaining order within the system.<br/><br/>
+                <b>Resilience</b>: Their immunity to Black cells ensures their survival in hostile environments, allowing them to stabilize regions affected by decay.<br/><br/>
+                <b>Supportive Role</b>: By forming clusters with Blue, Yellow, and Green entities, Red cells create zones of safety and cooperation, enabling other populations to thrive.<br/>
+                
+`
+            },
+            section3: {
+                title: "The Green Entity: The Invader",
+                content: `                                In the Game of Society, the Green entity, also known as the Invader, represents expansion and aggressive growth. Unlike other entities, Green cells thrive in dense environments, reflecting their resource-intensive nature and their ability to dominate when conditions are favorable.
+<br/><br/>
+                <h3>Rules for the Green Entity</h3> <br/>
+
+                The Green entity follows these distinct rules:<br/><br/>
+<p>
+                                    <b>Birth</b>: A new Green cell is born if exactly three neighboring cells (of any type) are alive.<br/>
+
+                                        <b>Survival</b>: A Green cell survives only if it has four or more living neighbors, regardless of their color.<br/><br/>
+
+                These rules emphasize the Green entity's dependence on high-density environments, making it a powerful but costly presence in society.
+<br/><br/>
+                <h3>Role of the Green Entity</h3><br/>
+                <p>
+
+                <b>Agent of Expansion</b>: Green entities aggressively expand and dominate areas with sufficient population density, often overtaking other entities in crowded regions.<br/><br/>
+                <b>High Cost of Survival</b>: Green cells are "expensive" to maintain, as they require a dense neighborhood to survive. In sparse areas, they quickly die out.<br/><br/>
+                <b>Impact on Society</b>: The presence of Green entities creates challenges for other colors, as their growth can destabilize existing structures and force shifts in population dynamics.<br/>
+                
+
+                
+`
+            },
+            section4: {
+                title: "The Yellow Entity: The Fragile",
+                content: `                                                In the Game of Society, the Yellow entity, also known as the Fragile, represents delicacy and instability. It is a vulnerable presence, thriving only under precise conditions and struggling to maintain stability over time.
+<br/><br/>
+                <h3>Rules for the Yellow Entity</h3> <br/>
+
+                The Yellow entity follows these specific rules:<br/><br/>
+<p>
+                                    <b>Birth</b>: A new Yellow cell is born if exactly three neighboring cells (of any type) are alive.<br/>
+
+                                        <b>Survival</b>: A Yellow cell survives only if it has exactly two living neighbors.<br/><br/>
+
+                These rules highlight the Yellow entity's fragility, as it requires a precise balance in its environment to persist. Any deviation from this balance results in its rapid decline.
+<br/><br/>
+                <h3>Role of the Yellow Entity</h3><br/>
+                <p>
+
+                <b>Symbol of Fragility</b>: Yellow entities exemplify vulnerability within society, thriving only in very specific conditions.<br/><br/>
+                <b>Limited Growth</b>: Due to their strict survival criteria, Yellow entities do not spread widely and tend to form small, delicate clusters.<br/><br/>
+                <b>Challenge for Stability</b>: Their inability to stabilize easily introduces a layer of complexity to the system, as they require careful management to coexist with other entities.<br/>
+                
+
+
+                
+`
+        },
+            section5: {
+                title: "The Black Entity: The Death",
+                content: `                In the Game of Society, the Black entity, also known as Death, represents decay and chaos. While it follows the basic mechanics of Conway's Game of Life, it introduces a disruptive and infectious element that challenges the survival of other entities.
+<br/><br/>
+                <h3>Rules for the Black Entity</h3> <br/>
+
+                The Black entity follows the classic rules of the Game of Life with an additional infectious property:<br/><br/>
+<p>
+                                    <b>Birth</b>: A new Black cell is born if exactly three neighboring cells (of any type) are alive.<br/>
+
+                                        <b>Survival</b>: A Black cell survives if it has two or three living neighbors.<br/>
+
+                <b>Death by Overpopulation</b>: A Black cell dies if it has more than three living neighbors.<br/>
+
+                <b>Death by Isolation</b>: A Black cell dies if it has fewer than two living neighbors.<br/><br/>
+
+                <b>Infection</b>: If a Black cell comes into contact with any neighboring cell of another color (Blue, Red, Green, or Yellow), that cell is immediately turned Black. This property makes Black cells a spreading force of destruction.
+<br/><br/>
+                <h3>Role of the Black Entity</h3><br/>
+                <p>
+
+                <b>Agent of Decay</b>: Black entities symbolize entropy and destruction, infecting and destabilizing the balance of the system.<br/><br/>
+                <b>Spreading Chaos</b>: Their infectious nature allows them to rapidly overtake other populations, forcing other entities to adapt or perish.<br/><br/>
+                <b>Challenge for Survival</b>: The presence of Black cells introduces a constant threat, making the coexistence of other entities more precarious and dynamic.<br/>
+                
+
+
+                
+`
+            }
+    };
+
+        function showSection(sectionKey) {
+            const contentElement = document.getElementById('content');
+            const section = sections[sectionKey];
+            if (section) {
+                contentElement.innerHTML = `<h2>${section.title}</h2><p>${section.content}</p>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
